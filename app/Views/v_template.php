@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
         <!-- Messages Dropdown Menu -->       
         <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <a class="nav-link" href="<?= base_url('Login') ?>">
             <i class="fas fa-user"></i> Login
           </a>
         </li>

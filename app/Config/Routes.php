@@ -21,6 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
+public bool $autoRoute = true;
 
 
 
@@ -36,7 +37,12 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 //Admin
 $routes->get('Admin', 'Admin::index');
+//Login
+$routes->get('Login', 'Login::index');
+<<<<<<< HEAD
 
+=======
+>>>>>>> f07e00cacef258184197f08fae743d635eb0e408
 
 
 
