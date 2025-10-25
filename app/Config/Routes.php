@@ -29,8 +29,17 @@ $routes->setAutoRoute(true);
 /**
  * @var RouteCollection $routes
  */
-$routes->get('Admin', 'Admin::index');
+$routes->get('/', 'Home::index');
+
 //Admin
+$routes->get('Admin', 'Admin::index');
+//Login
+$routes->get('Auth', 'Auth::index');
+//Login User
+$routes->get('Auth/LoginUser', 'Auth::LoginUser');
+//Login Anggota
+$routes->get('Auth/LoginAnggota', 'Auth::LoginAnggota');
+
 
 
 

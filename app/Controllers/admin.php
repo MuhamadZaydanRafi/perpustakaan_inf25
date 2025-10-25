@@ -8,8 +8,8 @@ class Admin extends BaseController
     {
         $data = [
             'judul' => 'Admin',
-            'page'  => 'v_admin',
+            'page'  => 'v_Admin',
         ];
-        return view('v_template_admin',$data);
+        return view('v_template_Admin',$data);
     }
 }
