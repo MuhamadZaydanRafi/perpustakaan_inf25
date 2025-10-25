@@ -36,7 +36,8 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 //Admin
 $routes->get('Admin', 'Admin::index');
-
+//Login
+$routes->get('Login', 'Login::index');
 
 
 

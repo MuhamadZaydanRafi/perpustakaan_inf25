@@ -2,13 +2,12 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Login extends BaseController
 {
-    public function login()
+    public function index()
     {
         $data = [
-            'judul' => 'Login',
-            
+            'judul' => 'Login',  
         ];
         return view('v_login',$data);
     }
