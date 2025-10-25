@@ -18,6 +18,8 @@ use CodeIgniter\Config\Routing as BaseRouting;
  */
 class Routing extends BaseRouting
 {
+    public bool $autoRoutesImproved = true;
+
     /**
      * For Defined Routes.
      * An array of files that contain route definitions.

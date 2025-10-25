@@ -1,27 +1,22 @@
 <?php
 
-namespace Config;
+use CodeIgniter\Router\RouteCollection;
 
-
-$routes = Services::routes();
-
-
-
-if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
-    require SYSTEMPATH . 'Config/Routes.php';
-}
-
-
-
-
-
-
+/**
+ * @var RouteCollection $routes
+ */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-public bool $autoRoute = true;
+
+// Gunakan baris ini untuk mengaktifkan Auto Routing (Improved)
+$routes->setAutoRoute(true);
+
+// Jika kamu pakai versi 4.3 ke atas, autoRoutesImproved diatur lewat Config\Routing.php,
+// bukan di sini.
+
 
 
 
@@ -34,15 +29,8 @@ public bool $autoRoute = true;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-//Admin
 $routes->get('Admin', 'Admin::index');
-//Login
-$routes->get('Login', 'Login::index');
-<<<<<<< HEAD
-
-=======
->>>>>>> f07e00cacef258184197f08fae743d635eb0e408
+//Admin
 
 
 
