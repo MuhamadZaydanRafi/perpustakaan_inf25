@@ -1,13 +1,34 @@
 <div class="login-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="<?= base_url() ?>" class="h1">Login User</a>
-    </div>
+      <a href="#" class="h1">Login User</a>
+      </div>
+      <div class="card-body">
+        <?php
+        //notifikasi
+        $errors = session()->getflashdata('errors');
+        if (!empty($errors)) { ?>
+          <div class="allert allert=danger" role="allert">
+          <h4>Periksa Entry Form</h4>
+          <ul>
+              <?php foreach ($errors as $key => $value) { ?>
+                <li><?= esc(error) ?></li>
+                <?php } ?>
+              </ul>
+          </div>
+        <?php } ?>
 
-    <div class="card-body">
-      <form action="../../index3.html" method="post">
+        <?php
+          if (session()->getFlashData('pesan')) {
+            echo '<div class="alert alert-danger" role="alert">';
+            echo session ()->getFlashData('pesan');
+            echo '</div>';
+          }
+
+        ?>
+      <?php echo form_open ('Auth/CekLoginUser')?>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -16,7 +37,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -32,7 +53,7 @@
             <button type="submit" class="btn btn-primary btn-block">Login</button>
           </div>
         </div>
-      </form>
+      <?php echo form_close() ?>
     </div>
     <!-- /.card-body -->
   </div>
