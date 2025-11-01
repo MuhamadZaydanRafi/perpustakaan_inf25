@@ -8,11 +8,11 @@
         //notifikasi
         $errors = session()->getflashdata('errors');
         if (!empty($errors)) { ?>
-          <div class="allert allert=danger" role="allert">
+          <div class="alert alert-danger" role="alert">
           <h4>Periksa Entry Form</h4>
           <ul>
-              <?php foreach ($errors as $key => $value) { ?>
-                <li><?= esc(error) ?></li>
+              <?php foreach ($errors as $key => $error) { ?>
+                <li><?= esc($error) ?></li>
                 <?php } ?>
               </ul>
           </div>
