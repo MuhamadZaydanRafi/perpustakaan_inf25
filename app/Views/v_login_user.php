@@ -1,9 +1,10 @@
 <div class="login-box">
+  
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <a href="#" class="h1">Login User</a>
-      </div>
-      <div class="card-body">
+    </div>
+    <div class="card-body">
         <?php
         //notifikasi
         $errors = session()->getflashdata('errors');
@@ -26,7 +27,7 @@
           }
 
         ?>
-      <?php echo form_open ('Auth/CekLoginUser')?>
+      <?php echo form_open ('Auth/CekLoginUser') ?>
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
