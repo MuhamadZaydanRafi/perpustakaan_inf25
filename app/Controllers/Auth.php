@@ -55,10 +55,11 @@ class Auth extends BaseController
             $password = $this->request->getPost('password');
             $cek_login = $this->ModelAuth->LoginUser($email, $password);
             if ($cek_login) {
+                //jika login berhasil
                 session()->set('nama_user', $cek_login['nama_user']);
                 session()->set('email', $cek_login['email']);
                 session()->set('level', $cek_login['level']);
-                return redirect()->to(base_urla('Admin'));
+                return redirect()->to(base_url('Admin'));
             }else {
                 //jika gagal login karena password atau email salah
                 session()->setFlasdata('pesan', 'E-Mail Atau Password Salah !');
