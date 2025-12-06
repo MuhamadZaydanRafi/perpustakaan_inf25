@@ -6,7 +6,7 @@ use App\Models\ModelAuth;
 <<<<<<< HEAD
 
 =======
->>>>>>> 6272f5c678276d11d28ccdf0bf0a0fe43581241f
+>>>>>>>
 class Auth extends BaseController
 {
 
@@ -36,7 +36,6 @@ class Auth extends BaseController
     public function CekLoginUser()
     {
         if ($this->validate([
-<<<<<<< HEAD
             'email' => [
                 'label' => 'E-Mail',
                 'rules' => 'required|valid_email',
@@ -45,33 +44,12 @@ class Auth extends BaseController
                     'valid_email' => '{field} Harus Format E-Mail !'
                 ]
             ],
-            'password' => [
-=======
-            'email'=> [
-                'label' => 'E-Mail',
-                'rules' => 'required|valid_email',
-                'errors' => [
-                  'required' => '{field} Masih Kosong !',
-                  'valid_email' => '{field} Harus Format E-Mail !',
-                ]
-            ],
             'password'=> [
->>>>>>> 6272f5c678276d11d28ccdf0bf0a0fe43581241f
                 'label' => 'Password',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Masih Kosong !',
-<<<<<<< HEAD
                     
-                ]
-            ]
-
-        ])) {
-            //jika entry valid
-            $email =  $this->request->getPost('email');
-            $password = $this->request->getPost('password');
-            $cek_login= $this->ModelAuth->LoginUser($email, $password);
-=======
                 ]
             ]
         ])) {
@@ -79,14 +57,13 @@ class Auth extends BaseController
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
             $cek_login = $this->ModelAuth->LoginUser($email, $password);
->>>>>>> 6272f5c678276d11d28ccdf0bf0a0fe43581241f
+
             if ($cek_login) {
                 //jika login berhasil
                 session()->set('nama_user', $cek_login['nama_user']);
                 session()->set('email', $cek_login['email']);
                 session()->set('level', $cek_login['level']);
                 return redirect()->to(base_url('Admin'));
-<<<<<<< HEAD
             }else{
                 //jika gagal login karena password atau email salah
                 session()->setFlashdata('pesan','E-Mail Atau Password Salah !');
@@ -99,7 +76,6 @@ class Auth extends BaseController
         return redirect()->to(base_url('Auth/LoginUser'));
         }
 
-=======
             }else {
                 //jika gagal login krna password atau email salah
                 session()->setFlashdata('pesan', 'E-Mail Atau Password Salah !');
@@ -110,9 +86,8 @@ class Auth extends BaseController
         else {
             //jika entry tidak valid
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('Auth/LoginUser'));           
+            return redirect()->to(base_url('Auth/LoginUser'));          
         }
->>>>>>> 6272f5c678276d11d28ccdf0bf0a0fe43581241f
     }
 
     public function LoginAnggota()
@@ -122,5 +97,14 @@ class Auth extends BaseController
             'page'  => 'v_login_Anggota',
         ];
         return view('v_template_login', $data);
+    }
+
+    public function LogOut()
+    {
+        session()->remove('nama_user');
+        session()->remove('email');
+        session()->remove('level');
+        session()->setFlashdata('pesan', 'LogOut Sukses !');
+        return redirect()->to(base_url('Auth/LoginUser'));
     }
 }
