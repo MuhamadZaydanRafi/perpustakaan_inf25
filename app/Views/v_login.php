@@ -14,7 +14,7 @@
                 <div class="icon">
                     <i class="fas fa fa-user"></i>
                 </div>
-                <a href="<?= base_url('Auth/LoginUser'); ?>" class="small-box-footer">Login <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('login_user'); ?>" class="small-box-footer">Login <i class="fas fa-arrow-circle-right"></i></a>
 
             </div>
         </div>

@@ -71,8 +71,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
         <!-- Messages Dropdown Menu -->       
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('Auth') ?>">
-            <i class="fas fa-sign-out-alt"></i> Login
+          <a class="nav-link" href="<?= base_url('login') ?>">
+            <i class="fas fa-sign-in-alt"></i> Login
           </a>
         </li>
       </ul>
@@ -146,6 +146,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="<?= base_url('adminLTE') ?>/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?= base_url('adminLTE') ?>/dist/js/demo.js"></script>
 </body>
 </html>

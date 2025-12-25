@@ -59,7 +59,7 @@ class Auth extends BaseController
                 session()->set('nama_user', $cek_login['nama_user']);
                 session()->set('email', $cek_login['email']);
                 session()->set('level', $cek_login['level']);
-                return redirect()->to(base_url('Admin'));
+                return redirect()->to(base_url('admin'));
             }else {
                 //jika gagal login karena password atau email salah
                 session()->setFlasdata('pesan', 'E-Mail Atau Password Salah !');
@@ -79,5 +79,13 @@ class Auth extends BaseController
             'page'  => 'v_login_Anggota',
         ];
         return view('v_template_login', $data);
+    }
+
+     public function LogOut()
+    {
+        session()->destroy();
+
+        // Redirect ke halaman login
+        return redirect()->to('/');
     }
 }
