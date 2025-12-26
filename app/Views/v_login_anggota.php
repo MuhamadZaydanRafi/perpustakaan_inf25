@@ -1,3 +1,7 @@
+<div class="login-logo">
+    <a href="<?= base_url() ?>"><b>Perpustakaan_inf25</b></a>
+    <br> <h3><b>Informatika 25</h3>
+  </div>
 <div class="login-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
@@ -26,14 +30,19 @@
 
         <div class="row">
           <div class="col-sm-6">
-            <a class="btn btn-success" href="<?= base_url('Auth') ?>">Kembali</a>
+            <a class="btn btn-success btn-block" href="<?= base_url('login') ?>">Kembali</a>
           </div>
           <div class="col-sm-6">
             <button type="submit" class="btn btn-primary btn-block">Login</button>
           </div>
         </div>
       </form>
-    </div>
+      <div class="social-auth-links text-center">
+        <p>-Atau-</p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-user-plus"></i> Daftar Anggota
+        </a>
+      </div>
     <!-- /.card-body -->
   </div>
   <!-- /.card -->

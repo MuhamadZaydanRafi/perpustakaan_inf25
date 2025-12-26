@@ -56,19 +56,22 @@ class Auth extends BaseController
             $cek_login = $this->ModelAuth->LoginUser($email, $password);
             if ($cek_login) {
                 //jika login berhasil
-                session()->set('nama_user', $cek_login['nama_user']);
-                session()->set('email', $cek_login['email']);
-                session()->set('level', $cek_login['level']);
+                session()->set([
+                    'nama_user' => $cek_login['nama_user'],
+                    'email'     => $cek_login['email'],
+                    'role'      => $cek_login['role'],
+                    'logged_in' => true,
+                ]);
                 return redirect()->to(base_url('admin'));
-            }else {
+            } else {
                 //jika gagal login karena password atau email salah
-                session()->setFlasdata('pesan', 'E-Mail Atau Password Salah !');
-                return redirect()->to(base_url('Auth/LoginUser'));
+                session()->setFlashdata('pesan', 'E-Mail Atau Password Salah !');
+                return redirect()->to(base_url('login_user'));
             }
         } else {
             //jika entry tidak valid
-            session()->setFlasdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('Auth/LoginUser'));
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('login_user'));
         }
     }
 

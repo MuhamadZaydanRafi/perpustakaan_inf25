@@ -23,10 +23,14 @@ class FilterUser implements FilterInterface
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
-    public function before(RequestInterface $request, $arguments = null)
+   public function before(RequestInterface $request, $roles = null)
     {
-        if (session()->get('level')=="") {
-            return redirect()->to(base_url('/login_user'));
+        if (! session()->get('logged_in')) {
+            return redirect()->to('/login');
+        }
+
+        if ($roles && ! in_array(session()->get('role'), $roles)) {
+            return redirect()->to('/forbidden');
         }
     }
 

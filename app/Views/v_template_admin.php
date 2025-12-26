@@ -82,47 +82,102 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="<?= base_url('admin') ?>" class="nav-link <?=  $menu=='dashboard' ? 'active' : '' ?>">
+            <a href="<?= base_url('admin') ?>" class="nav-link <?=  (isset($menu) ? $menu : '')=='dashboard' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dasboard
               </p>
             </a>
           </li>
-          <li class="nav-item <?=  $menu=='masterdata' ? 'menu-open' : '' ?>">
-            <a href="#" class="nav-link <?=  $menu=='masterdata' ? 'active' : '' ?>">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='masterdata' ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='masterdata' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Master Data
+                Master Buku
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link <?=  $submenu=='buku' ? 'active' : '' ?>">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Buku</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/kategori') ?>" class="nav-link <?=  $submenu=='kategori' ? 'active' : '' ?>">
+                <a href="<?= base_url('admin/kategori') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='kategori' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/rak') ?>" class="nav-link <?=  $submenu=='rak' ? 'active' : '' ?>">
+                <a href="<?= base_url('admin/rak') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='rak' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rak</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link <?=  $submenu=='penerbit' ? 'active' : '' ?>">
+                <a href="<?= base_url('admin/penerbit') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penerbit' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Penerbit</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/penulis') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penulis' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penulis</p>
+                </a>
+              </li>
             </ul>
+          </li>
+          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='masteranggota' ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='masteranggota' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Master Anggota
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('admin/kelas') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='kelas' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kelas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/kategori') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='kategori' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kategori</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/rak') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='rak' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rak</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/penerbit') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penerbit' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penerbit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/penulis') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penulis' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penulis</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/user') ?>" class="nav-link <?=  (isset($menu) ? $menu : '')=='user' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
           </li>
           
         </ul>

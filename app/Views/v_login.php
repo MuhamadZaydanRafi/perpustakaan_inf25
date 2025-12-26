@@ -32,7 +32,7 @@
                 <div class="icon">
                     <i class="fas fa fa-users"></i>
                 </div>
-                <a href="<?= base_url('Auth/LoginAnggota'); ?>" class="small-box-footer">Login <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url('login_anggota'); ?>" class="small-box-footer">Login <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>
