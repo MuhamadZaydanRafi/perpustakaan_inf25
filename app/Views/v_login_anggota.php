@@ -39,7 +39,7 @@
       </form>
       <div class="social-auth-links text-center">
         <p>-Atau-</p>
-        <a href="#" class="btn btn-block btn-primary">
+        <a href="<?= base_url('daftar_anggota') ?>" class="btn btn-block btn-primary">
           <i class="fab fa-user-plus"></i> Daftar Anggota
         </a>
       </div>

@@ -10,11 +10,14 @@ $routes->get('/', 'Home::index');
 $routes->get('login', 'Auth::index');
 $routes->get('login_user', 'Auth::LoginUser');
 $routes->get('login_anggota', 'Auth::LoginAnggota');
+$routes->get('anggota/daftar', 'Anggota::Daftar');
 $routes->get('debug-password', 'DebugPassword::index');
 $routes->get('debug-hash', 'DebugPassword::hashTest');
 $routes->get('rehash-password', 'ReHashPassword::index');
 $routes->post('cek_login_user', 'Auth::CekLoginUser');
 $routes->get('log_out_admin', 'Auth::LogOut');
+$routes->get('daftar_anggota', 'Anggota::Daftar');
+$routes->post('anggota/insertdata', 'Anggota::InsertData');
 
 
 $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
@@ -69,6 +72,14 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->get('kelas/edit/(:num)', 'Kelas::edit/$1');
     $routes->post('kelas/updatedata/(:num)', 'Kelas::UpdateData/$1');
     $routes->get('kelas/delete/(:num)', 'Kelas::DeleteData/$1');
+
+    //anggota
+    $routes->get('anggota', 'Anggota::index');
+    $routes->get('anggota/input', 'Anggota::input');
+    $routes->post('anggota/insertdata', 'Anggota::InsertData');
+    $routes->get('anggota/edit/(:num)', 'Anggota::edit/$1');
+    $routes->post('anggota/updatedata/(:num)', 'Anggota::UpdateData/$1');
+    $routes->get('anggota/delete/(:num)', 'Anggota::DeleteData/$1');
 
 
 });

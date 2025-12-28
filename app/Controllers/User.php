@@ -39,12 +39,24 @@ class User extends BaseController
     {
         $validation = \Config\Services::validation();
 
-        // VALIDASI FILE UPLOAD
+        // AMBIL FILE FOTO
+        $file = $this->request->getFile('foto');
+
+        // Periksa apakah file di-upload
+        if (! $file || $file->getError() == UPLOAD_ERR_NO_FILE) {
+            return redirect()->back()->withInput()->with('errors', ['foto' => 'Foto wajib diupload.']);
+        }
+
+        // Periksa error upload lain
+        if ($file->getError() !== UPLOAD_ERR_OK) {
+            return redirect()->back()->withInput()->with('errors', ['foto' => 'Upload gagal (kode: ' . $file->getError() . ').']);
+        }
+
+        // Validasi tipe/ukuran
         $rulesFile = [
             'foto' => [
-                'rules' => 'uploaded[foto]|is_image[foto]|max_size[foto,2048]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'rules' => 'is_image[foto]|max_size[foto,2048]|mime_in[foto,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto wajib diupload.',
                     'is_image' => 'File harus berupa gambar.',
                     'max_size' => 'Ukuran maksimal 2MB.',
                     'mime_in'  => 'Format foto harus JPG/PNG.'
@@ -52,12 +64,10 @@ class User extends BaseController
             ]
         ];
 
-        if (!$this->validate($rulesFile)) {
+        if (! $this->validate($rulesFile)) {
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
-        // AMBIL FILE FOTO (TAPI BELUM DI MOVE)
-        $file = $this->request->getFile('foto');
         $newName = $file->getRandomName();
 
         // DATA ke model
