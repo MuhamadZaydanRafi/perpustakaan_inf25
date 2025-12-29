@@ -17,7 +17,8 @@ $routes->get('rehash-password', 'ReHashPassword::index');
 $routes->post('cek_login_user', 'Auth::CekLoginUser');
 $routes->get('log_out_admin', 'Auth::LogOut');
 $routes->get('daftar_anggota', 'Anggota::Daftar');
-$routes->post('anggota/insertdata', 'Anggota::InsertData');
+$routes->post('anggota/daftaranggota', 'Anggota::DaftarAnggota');
+$routes->post('cek_login_anggota', 'Auth::CekLoginAnggota');
 
 
 $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
@@ -81,5 +82,11 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->post('anggota/updatedata/(:num)', 'Anggota::UpdateData/$1');
     $routes->get('anggota/delete/(:num)', 'Anggota::DeleteData/$1');
 
+
+});
+
+$routes->group('anggota', ['filter' => 'filteranggota'], function ($routes) {
+
+    $routes->get('dashboard', 'Anggota::index');
 
 });

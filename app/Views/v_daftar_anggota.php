@@ -11,7 +11,7 @@
     <div class="card-body">
         <?php 
         //notifikasi
-        $errors = session()->getflashdata('errors');
+        $errors = session()->getFlashData('errors');
         if (!empty($errors)) { ?>
           <div class="alert alert-danger" role="alert">
           <h4>Periksa Entry Form</h4>
@@ -31,7 +31,7 @@
           }
 
         ?>
-      <?php echo form_open_multipart('anggota/insertdata') ?>
+      <?php echo form_open_multipart('anggota/daftaranggota') ?>
         <div class="form-group">
           <label> NIM</label>
           <input name="nim" class="form-control" placeholder="NIM">
@@ -39,6 +39,10 @@
         <div class="form-group">
           <label>Nama anggota</label>
           <input name="nama_anggota" class="form-control" placeholder="Nama Anggota">
+        </div>
+        <div class="form-group">
+          <label> Password</label>
+          <input name="password" class="form-control" placeholder="Password">
         </div>
         <div class="form-group">
           <label> Kelas</label>
@@ -57,19 +61,14 @@
             <option value="Perempuan">Perempuan</option>
           </select>
         </div>
-        <div class="form-group">
+         <div class="form-group">
           <label> No HP</label>
           <input name="no_hp" class="form-control" placeholder="No HP">
         </div>
-        <div class="form-group">
+         <div class="form-group">
           <label> Alamat</label>
           <input name="alamat" class="form-control" placeholder="Alamat">
         </div>
-        <div class="form-group">
-          <label> Foto</label>
-          <input type="file" name="foto" class="form-control" placeholder="Foto">
-        </div>
-
         <div class="row">
           <div class="col-sm-6">
             <a class="btn btn-success" href="<?= base_url('login') ?>">Kembali</a>

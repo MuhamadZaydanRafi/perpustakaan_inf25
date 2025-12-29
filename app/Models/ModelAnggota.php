@@ -15,6 +15,7 @@ class ModelAnggota extends Model
     protected $allowedFields    = [
         'nim',
         'nama_anggota',
+        'password',
         'id_kelas',
         'jenis_kelamin',
         'no_hp',
@@ -38,7 +39,8 @@ class ModelAnggota extends Model
     // Validation
     protected $validationRules      = [
         'nim'           => 'required|min_length[3]|max_length[20]|is_unique[tbl_anggota.nim]',
-        'nama_anggota'          => 'required|min_length[3]|max_length[200]',
+        'nama_anggota'  => 'required|min_length[3]|max_length[200]',
+        'password'      => 'required|min_length[6]|max_length[255]',
         'id_kelas'      => 'required',
         'jenis_kelamin' => 'required|in_list[Laki-Laki,Perempuan]',
         'no_hp'         => 'required|min_length[10]|max_length[15]',
@@ -55,6 +57,11 @@ class ModelAnggota extends Model
             'required'   => 'Nama anggota wajib diisi.',
             'min_length' => 'Nama anggota minimal 3 karakter.',
             'max_length' => 'Nama anggota maksimal 200 karakter.',
+        ],
+        'password' => [
+            'required'   => 'Password wajib diisi.',
+            'min_length' => 'Password minimal 6 karakter.',
+            'max_length' => 'Password maksimal 255 karakter.',
         ],
         'id_kelas' => [
             'required'   => 'Kelas wajib diisi.',
@@ -79,13 +86,23 @@ class ModelAnggota extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
+    protected $beforeInsert   = ['hashPassword'];
     protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
+    protected $beforeUpdate   = ['hashPassword'];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+      protected function hashPassword(array $data)
+    {
+        if (!empty($data['data']['password'])) {
+            $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+        } else {
+            unset($data['data']['password']);
+        }
+        return $data;
+    }
 
 }

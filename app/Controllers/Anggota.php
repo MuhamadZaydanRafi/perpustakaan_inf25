@@ -23,7 +23,13 @@ class Anggota extends BaseController
 
     public function index()
     {
-        //
+         $data = [
+            'menu' => 'dashboard',
+            'submenu'=> '',
+            'judul' => 'Admin',
+            'page'  => 'dashboard_anggota/v_anggota',
+        ];
+        return view('v_template_anggota',$data);
     }
     public function Daftar()
     {
@@ -44,6 +50,31 @@ class Anggota extends BaseController
         ];
         return view('v_template_login', $data);
     }
+
+    public function DaftarAnggota()
+    {
+        $validation = \Config\Services::validation();
+
+    
+        $data = [
+            'nim'          => $this->request->getPost('nim'),
+            'nama_anggota' => $this->request->getPost('nama_anggota'),
+            'password'     => $this->request->getPost('password'),
+            'jenis_kelamin'=> $this->request->getPost('jenis_kelamin'),
+            'id_kelas'     => $this->request->getPost('kelas'),
+            'no_hp'        => $this->request->getPost('no_hp'),
+            'alamat'       => $this->request->getPost('alamat'),
+        ];
+
+        if (!$this->ModelAnggota->insert($data)) {
+            return redirect()->back()->withInput()
+                ->with('errors', $this->ModelAnggota->errors());
+        }
+
+        session()->setFlashdata('success', 'Daftar anggota berhasil disimpan.');
+        return redirect()->to('/login_anggota');
+    }
+
 
     public function InsertData()
     {
@@ -74,6 +105,7 @@ class Anggota extends BaseController
         $data = [
             'nim'          => $this->request->getPost('nim'),
             'nama_anggota' => $this->request->getPost('nama_anggota'),
+            'password'      => $this->request->getPost('password'),
             'alamat'       => $this->request->getPost('alamat'),
             'no_hp'        => $this->request->getPost('no_hp'),
             'jenis_kelamin'=> $this->request->getPost('jenis_kelamin'),
