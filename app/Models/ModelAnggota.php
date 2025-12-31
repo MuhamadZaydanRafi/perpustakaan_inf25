@@ -104,5 +104,20 @@ class ModelAnggota extends Model
         }
         return $data;
     }
+    public function getAnggotaWithKelas()
+    {
+       return $this->select('tbl_anggota.*, tbl_kelas.nama_kelas')
+                    ->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_anggota.id_kelas')
+                    ->findAll();
+    }
+
+    // Relasi satu data
+    public function getDetailkelas($id_anggota)
+    {
+        return $this->select('tbl_anggota.*, tbl_kelas.nama_kelas')
+                    ->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_anggota.id_kelas')
+                    ->where('tbl_anggota.id_anggota', $id_anggota)
+                    ->first();
+    }
 
 }

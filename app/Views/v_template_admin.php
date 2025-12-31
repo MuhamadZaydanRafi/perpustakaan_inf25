@@ -179,6 +179,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/pengaturan') ?>" class="nav-link <?=  (isset($menu) ? $menu : '')=='pengaturan' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Pengaturan Web
+              </p>
+            </a>
+          </li>
           
         </ul>
       </nav>

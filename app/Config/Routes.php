@@ -82,6 +82,10 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->post('anggota/updatedata/(:num)', 'Anggota::UpdateData/$1');
     $routes->get('anggota/delete/(:num)', 'Anggota::DeleteData/$1');
 
+    //pengaturan
+    $routes->get('pengaturan', 'Pengaturan::web');
+    $routes->post('pengaturan/updateweb', 'Pengaturan::UpdateWeb');
+
 
 });
 

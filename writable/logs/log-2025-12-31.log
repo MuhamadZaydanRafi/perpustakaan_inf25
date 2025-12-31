@@ -1,0 +1,255 @@
+DEBUG - 2025-12-31 04:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 04:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:54:57 --> ErrorException: Trying to access array offset on null
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 04:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:56:45 --> ErrorException: Attempt to read property "nama_web" on null
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_web" on null', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 04:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:56:46 --> ErrorException: Attempt to read property "nama_web" on null
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_web" on null', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 04:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:56:48 --> ErrorException: Attempt to read property "nama_web" on null
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_web" on null', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 04:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:59:42 --> ErrorException: Attempt to read property "nama_web" on array
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_web" on array', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 04:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 04:59:43 --> ErrorException: Attempt to read property "nama_web" on array
+[Method: GET, Route: admin/pengaturan]
+in APPPATH\Views\v_pengaturan_web.php on line 19.
+ 1 APPPATH\Views\v_pengaturan_web.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_web" on array', 'D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php', 19)
+ 2 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_pengaturan_web.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_pengaturan_web', [], true)
+ 5 APPPATH\Views\v_template_admin.php(225): view('v_pengaturan_web')
+ 6 SYSTEMPATH\View\View.php(226): include('D:\\laragon\\www\\perpustakaan_inf25\\app\\Views\\v_template_admin.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('v_template_Admin', [], true)
+ 9 APPPATH\Controllers\Pengaturan.php(27): view('v_template_Admin', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->web()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 05:00:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-31 05:25:22 --> ArgumentCountError: Too few arguments to function App\Controllers\Pengaturan::UpdateWeb(), 0 passed in D:\laragon\www\perpustakaan_inf25\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: admin/pengaturan/updateweb]
+in APPPATH\Controllers\Pengaturan.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pengaturan->UpdateWeb()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengaturan))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 05:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 05:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-31 06:03:51 --> mysqli_sql_exception: Table 'db-perpustakaan-ci4.tb_kelas' doesn't exist in D:\laragon\www\perpustakaan_inf25\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\laragon\www\perpustakaan_inf25\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tbl_ang...', 0)
+#1 D:\laragon\www\perpustakaan_inf25\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_ang...')
+#2 D:\laragon\www\perpustakaan_inf25\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_ang...')
+#3 D:\laragon\www\perpustakaan_inf25\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_ang...', Array, false)
+#4 D:\laragon\www\perpustakaan_inf25\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\perpustakaan_inf25\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\perpustakaan_inf25\app\Models\ModelAnggota.php(111): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\perpustakaan_inf25\app\Controllers\Anggota.php(31): App\Models\ModelAnggota->getAnggotaWithKelas()
+#8 D:\laragon\www\perpustakaan_inf25\system\CodeIgniter.php(933): App\Controllers\Anggota->index()
+#9 D:\laragon\www\perpustakaan_inf25\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+#10 D:\laragon\www\perpustakaan_inf25\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\perpustakaan_inf25\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\perpustakaan_inf25\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\laragon\www\perpustakaan_inf25\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 D:\laragon\www\perpustakaan_inf25\system\rewrite.php(44): require_once('D:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-31 06:03:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db-perpustakaan-ci4.tb_kelas' doesn't exist
+[Method: GET, Route: anggota/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ModelAnggota.php(111): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Anggota.php(31): App\Models\ModelAnggota->getAnggotaWithKelas()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+CRITICAL - 2025-12-31 06:03:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db-perpustakaan-ci4.tb_kelas' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ModelAnggota.php(111): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Anggota.php(31): App\Models\ModelAnggota->getAnggotaWithKelas()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+CRITICAL - 2025-12-31 06:03:51 --> [Caused by] mysqli_sql_exception: Table 'db-perpustakaan-ci4.tb_kelas' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_anggota`.*, `tb_kelas`.`nama_kelas`
+FROM `tbl_anggota`
+JOIN `tb_kelas` ON `tb_kelas`.`id_kelas` = `tbl_anggota`.`id_kelas`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ModelAnggota.php(111): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Anggota.php(31): App\Models\ModelAnggota->getAnggotaWithKelas()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Anggota->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Anggota))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\laragon\\www\\perpustakaan_inf25\\public\\index.php')
+DEBUG - 2025-12-31 06:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-31 06:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
