@@ -29,6 +29,11 @@ class FilterUser implements FilterInterface
             return redirect()->to('/login');
         }
 
+        // Cegah anggota (member) mengakses admin dashboard
+        if (session()->get('nim')) {
+            return redirect()->to('/anggota/dashboard');
+        }
+
         if ($roles && ! in_array(session()->get('role'), $roles)) {
             return redirect()->to('/forbidden');
         }

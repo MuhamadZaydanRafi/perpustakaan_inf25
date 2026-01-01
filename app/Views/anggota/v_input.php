@@ -10,15 +10,15 @@
               session();
               $validation = \Config\Services::validation();
               ?>
-              <?php echo form_open_multipart('admin/user/insertdata') ?>
+              <?php echo form_open_multipart('admin/anggota/insertdata') ?>
 
                <div class="row">
                   <div class="col-sm-6">
                   <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" name="email" value="<?= old('email') ?>" placeholder="email" class="form-control <?= isset(session('errors')['email']) ? 'is-invalid' : '' ?>">
+                    <label>NIM</label>
+                    <input type="text" name="nim" value="<?= old('nim') ?>" placeholder="NIM" class="form-control <?= isset(session('errors')['nim']) ? 'is-invalid' : '' ?>">
                     <div class="invalid-feedback">
-                        <?= session('errors')['email'] ?? '' ?>
+                        <?= session('errors')['nim'] ?? '' ?>
                     </div>
                   </div>
                   </div>
@@ -35,22 +35,62 @@
                <div class="row">
                   <div class="col-sm-6">
                   <div class="form-group">
-                    <label>Nama User</label>
-                    <input type="text" name="nama_user" value="<?= old('nama_user') ?>" placeholder="Nama" class="form-control <?= isset(session('errors')['nama_user']) ? 'is-invalid' : '' ?>">
+                    <label>Nama Anggota</label>
+                    <input type="text" name="nama_anggota" value="<?= old('nama_anggota') ?>" placeholder="Nama" class="form-control <?= isset(session('errors')['nama_anggota']) ? 'is-invalid' : '' ?>">
                     <div class="invalid-feedback">
-                        <?= session('errors')['nama_user'] ?? '' ?>
+                        <?= session('errors')['nama_anggota'] ?? '' ?>
                     </div>
                   </div>                        
                   </div>
                   <div class="col-sm-6">
                   <div class="form-group">
-                    <label>role</label>
-                    <input type="text" name="role" value="<?= old('role') ?>" placeholder="role" class="form-control <?= isset(session('errors')['role']) ? 'is-invalid' : '' ?>">
+                    <label>No Hp</label>
+                    <input type="text" name="no_hp" value="<?= old('no_hp') ?>" placeholder="No Hp" class="form-control <?= isset(session('errors')['no_hp']) ? 'is-invalid' : '' ?>">
                     <div class="invalid-feedback">
-                        <?= session('errors')['role'] ?? '' ?>
+                        <?= session('errors')['no_hp'] ?? '' ?>
                     </div>
                   </div>
                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                    <label> Kelas</label>
+                    <select class="form-control <?= isset(session('errors')['id_kelas']) ? 'is-invalid' : '' ?>" name="id_kelas" id="">
+                      <option value="">--Pilih Kelas--</option>
+                      <?php foreach ($kelas as $key => $value) { ?>
+                        <option value="<?= $value['id_kelas'] ?>" <?= old('id_kelas') == $value['id_kelas'] ? 'selected' : '' ?>><?= $value['nama_kelas'] ?></option>
+                      <?php } ?>
+                    </select>
+                    <div class="invalid-feedback">
+                        <?= session('errors')['id_kelas'] ?? '' ?>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label> Jenis Kelamin</label>
+                      <select class="form-control <?= isset(session('errors')['jenis_kelamin']) ? 'is-invalid' : '' ?>" name="jenis_kelamin" id="">
+                        <option value="">--Pilih Jenis Kelamin--</option>
+                        <option value="Laki-Laki" <?= old('jenis_kelamin')=='Laki-Laki' ? 'selected' : '' ?>>Laki-Laki</option>
+                        <option value="Perempuan" <?= old('jenis_kelamin')=='Perempuan' ? 'selected' : '' ?>>Perempuan</option>
+                      </select>
+                      <div class="invalid-feedback">
+                          <?= session('errors')['jenis_kelamin'] ?? '' ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+                <div class="row">   
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Alamat Anggota</label>
+                        <textarea name="alamat" class="form-control <?= isset(session('errors')['alamat']) ? 'is-invalid' : '' ?>"><?= old('alamat') ?></textarea>
+                        <div class="invalid-feedback">
+                            <?= session('errors')['alamat'] ?? '' ?>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">

@@ -75,11 +75,12 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->get('kelas/delete/(:num)', 'Kelas::DeleteData/$1');
 
     //anggota
-    $routes->get('anggota', 'Anggota::index');
+    $routes->get('anggota', 'Anggota::indexAdmin');
     $routes->get('anggota/input', 'Anggota::input');
     $routes->post('anggota/insertdata', 'Anggota::InsertData');
-    $routes->get('anggota/edit/(:num)', 'Anggota::edit/$1');
-    $routes->post('anggota/updatedata/(:num)', 'Anggota::UpdateData/$1');
+    $routes->get('anggota/verifikasi/(:num)', 'Anggota::verify/$1');
+    $routes->get('anggota/edit/(:num)', 'Anggota::editAnggota/$1');
+    $routes->post('anggota/updatedata/(:num)', 'Anggota::updateDataAnggota/$1');
     $routes->get('anggota/delete/(:num)', 'Anggota::DeleteData/$1');
 
     //pengaturan
@@ -92,5 +93,7 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
 $routes->group('anggota', ['filter' => 'filteranggota'], function ($routes) {
 
     $routes->get('dashboard', 'Anggota::index');
+    $routes->get('edit_profil/(:num)', 'Anggota::edit/$1');
+    $routes->post('updateprofil/(:num)', 'Anggota::updateData/$1');
 
 });

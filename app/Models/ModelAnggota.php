@@ -20,7 +20,8 @@ class ModelAnggota extends Model
         'jenis_kelamin',
         'no_hp',
         'alamat',
-        'foto'
+        'foto',
+            'verifikasi'
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -38,21 +39,15 @@ class ModelAnggota extends Model
 
     // Validation
     protected $validationRules      = [
-        'nim'           => 'required|min_length[3]|max_length[20]|is_unique[tbl_anggota.nim]',
         'nama_anggota'  => 'required|min_length[3]|max_length[200]',
         'password'      => 'required|min_length[6]|max_length[255]',
         'id_kelas'      => 'required',
         'jenis_kelamin' => 'required|in_list[Laki-Laki,Perempuan]',
         'no_hp'         => 'required|min_length[10]|max_length[15]',
         'alamat'        => 'required|min_length[5]|max_length[500]',
+
     ];
     protected $validationMessages   = [
-        'nim' => [
-            'required'    => 'NIM wajib diisi.',
-            'min_length'  => 'NIM minimal 3 karakter.',
-            'max_length'  => 'NIM maksimal 20 karakter.',
-            'is_unique'   => 'NIM sudah terdaftar.',
-        ],
         'nama_anggota' => [
             'required'   => 'Nama anggota wajib diisi.',
             'min_length' => 'Nama anggota minimal 3 karakter.',

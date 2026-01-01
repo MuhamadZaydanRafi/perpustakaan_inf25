@@ -4,7 +4,7 @@
                 <h3 class="card-title"><?= $judul ?></h3>
 
                 <div class="card-tools">
-                  <a href="<?= base_url('admin/user/input') ?>" class="btn btn-flat btn-primary btn-sm">
+                  <a href="<?= base_url('admin/anggota/input') ?>" class="btn btn-flat btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah
                     </a>
                 </div>
@@ -41,37 +41,45 @@
                 }
 
                 ?>
-              <table id="example2" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr class="text-center" >
                   <th style="width: 50px">No</th>
                   <th>Foto</th>
                   <th>Nama</th>
-                  <th>Email</th>
+                  <th>NIM</th>
                   <th style="width: 150px">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-              <?php foreach ($users as $i => $a): ?>
-                <tr class="text-center">
+              <?php foreach ($anggotawithkelas as $i => $a): ?>
+                <tr class="">
                   <td><?= $i + 1 ?></td>
-                  <td>
+                  <td class="text-center">
                       <?php if ($a['foto']): ?>
-                          <img src="<?= base_url('uploads/user/' . $a['foto']) ?>" alt="Foto" width="50" height="50" class="rounded-circle">
+                          <img src="<?= base_url('uploads/anggota/' . $a['foto']) ?>" alt="Foto" width="50" height="50" class="rounded-circle">
                       <?php else: ?>
                           <span class="text-muted">Tidak ada</span>
                       <?php endif; ?>
                   </td>
-                  <td><?= esc($a['nama_user']) ?></td>
-                  <td><?= esc($a['email']) ?></td>
+                  <td><?= esc($a['nama_anggota']) ?><br>
+                   <?php if (isset($a['verifikasi']) && $a['verifikasi']==1) {
+                    echo '<span class="text-success"> <i class="fas fa-check"></i> Terverifikasi</span>';
+                   }
+                   else{
+                    echo '<span class="text-danger"> <i class="fas fa-times"></i> Belum Terverifikasi</span><br>';
+                    echo '<a href="' . base_url('admin/anggota/verifikasi/' . $a['id_anggota']) . '" class="btn btn-sm btn-primary">Verifikasi</a>';
+                   } ?>
+                </td>
+                  <td><?= esc($a['nim']) ?></td>
                   <td>
-                    <a href="<?= base_url('admin/user/detail/' . $a['id_user']) ?>" class="btn btn-success btn-sm" title="Lihat">
+                    <a href="<?= base_url('admin/anggota/detail/' . $a['id_anggota']) ?>" class="btn btn-success btn-sm" title="Lihat">
                       <i class="fas fa-eye"></i>
                     </a>
-                    <a href="<?= base_url('admin/user/edit/' . $a['id_user']) ?>" class="btn btn-warning btn-sm" title="Edit">
+                     <a href="<?= base_url('admin/anggota/edit/' . $a['id_anggota']) ?>" class="btn btn-warning btn-sm" title="Edit">
                       <i class="fas fa-edit"></i>
                     </a>
-                    <a href="<?= base_url('admin/user/delete/' . $a['id_user']) ?>" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?');">
+                    <a href="<?= base_url('admin/anggota/delete/' . $a['id_anggota']) ?>" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?');">
                       <i class="fas fa-trash"></i>
                     </a>
                   </td>

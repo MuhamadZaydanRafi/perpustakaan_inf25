@@ -108,8 +108,9 @@ class Auth extends BaseController
             if ($cek_login) {
                 //jika login berhasil
                 session()->set([
+                    'id_anggota' => $cek_login['id_anggota'],
                     'nim' => $cek_login['nim'],
-                    'nama_user' => $cek_login['nama_anggota'],
+                    'nama_anggota' => $cek_login['nama_anggota'],
                     'password'     => $cek_login['password'],
                     'jenis_kelamin'     => $cek_login['jenis_kelamin'],
                     'id_kelas'     => $cek_login['id_kelas'],
