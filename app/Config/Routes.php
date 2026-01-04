@@ -79,6 +79,7 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->get('anggota/input', 'Anggota::input');
     $routes->post('anggota/insertdata', 'Anggota::InsertData');
     $routes->get('anggota/verifikasi/(:num)', 'Anggota::verify/$1');
+    $routes->get('anggota/detail/(:num)', 'Anggota::detail/$1');
     $routes->get('anggota/edit/(:num)', 'Anggota::editAnggota/$1');
     $routes->post('anggota/updatedata/(:num)', 'Anggota::updateDataAnggota/$1');
     $routes->get('anggota/delete/(:num)', 'Anggota::DeleteData/$1');

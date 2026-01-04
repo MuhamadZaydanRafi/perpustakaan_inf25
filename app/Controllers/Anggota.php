@@ -322,6 +322,24 @@ class Anggota extends BaseController
         return view('v_template_admin', $data);
     }
 
+    public function detail($id_anggota)
+    {
+        $anggota = $this->ModelAnggota->getDetailkelas($id_anggota);
+        if (! $anggota) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data anggota tidak ditemukan');
+        }
+
+        $data = [
+            'menu'  => 'masteranggota',
+            'submenu' => 'anggota',
+            'judul' => 'Detail Anggota',
+            'page'  => 'anggota/v_detail',
+            'anggota' => $anggota,
+        ];
+
+        return view('v_template_admin', $data);
+    }
+
      public function updateDataAnggota($id_anggota)
     {
         $validation = \Config\Services::validation();

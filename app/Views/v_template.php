@@ -18,14 +18,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?= base_url('adminLTE') ?>/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition layout-top-nav">
+  <?php 
+  $db = \Config\Database::connect();
+  $web = $db->table('tbl_web')->getWhere(['id_web' => 1])->getRowArray();
+  ?>
 <div class="wrapper">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
-      <a href="../../index3.html" class="navbar-brand">
-        <img src="<?= base_url('adminLTE') ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Perpustakaan_inf25</span>
+      <a href="<?= base_url('uploads/web/') ?>" class="navbar-brand">
+        <img src="<?= base_url('uploads/web/'. $web['logo']) ?>" width="80px" class="brand-image  elevation-0">
+        <span class="brand-text font-weight-light"><b>PERPUSTAKAAN</b></span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +41,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="index3.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="index3.html" class="nav-link">Book</a>
+          </li>
+          <li class="nav-item">
+            <a href="index3.html" class="nav-link">E-Book</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Contact</a>
@@ -87,15 +97,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"> Top Navigation <small>Example 3.0</small></h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Layout</a></li>
-              <li class="breadcrumb-item active">Top Navigation</li>
-            </ol>
-          </div><!-- /.col -->
+          <div class="navbar-brand">
+            <h1 class="m-0"> <b><?= $web['nama_web'] ?></b></h1>
+          </div>
+          </div>><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -115,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
             ?>
          
-
+        </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
