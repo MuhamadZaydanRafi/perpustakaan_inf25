@@ -5,26 +5,29 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ModelPengaturan;
+use App\Models\ModelSlider;
 
 class Pengaturan extends BaseController
 {
      protected $ModelPengaturan;
+     protected $ModelSlider;
     public function __construct()
     {
        
         $this->ModelPengaturan = new ModelPengaturan();
+        $this->ModelSlider = new ModelSlider();
         helper('form');
     }
     public function web()
     {
         $data = [
             'menu' => 'pengaturan',
-            'submenu'=> '',
+            'submenu'=> 'pengaturan_web',
             'judul' => 'Pengaturan Web',
             'page'  => 'v_pengaturan_web',
             'web'   => $this->ModelPengaturan->find(1),
         ];
-        return view('v_template_Admin',$data);
+        return view('v_template_admin',$data);
     }
 
     public function UpdateWeb()
@@ -110,4 +113,85 @@ class Pengaturan extends BaseController
         session()->setFlashdata('success', 'Pengaturan berhasil diupdate.');
         return redirect()->to('/admin/prngaturan');
     }
+
+    public function slider()
+    {
+        $data = [
+            'menu' => 'pengaturan',
+            'submenu'=> 'slider',
+            'judul' => 'Slider',
+            'page'  => 'slider/v_slider',
+            'slider'   => $this->ModelSlider->findAll(),
+        ];
+        return view('v_template_admin',$data);
+    }
+    public function InputSlider()
+    {
+        $data = [
+            'menu' => 'pengaturan',
+            'submenu'=> 'slider',
+            'judul' => 'Input Slider',
+            'page'  => 'slider/v_input',
+            'slider'   => $this->ModelSlider->findAll(),
+        ];
+        return view('v_template_admin',$data);
+    }
+
+    public function InsertSlider()
+    {
+        $validation = \Config\Services::validation();
+        // VALIDASI FILE UPLOAD
+        $rulesFile = [
+            'slider' => [
+                'rules' => 'uploaded[slider]|is_image[slider]|max_size[slider,2048]|mime_in[slider,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'uploaded' => 'Slider wajib diupload.',
+                    'is_image' => 'File harus berupa gambar.',
+                    'max_size' => 'Ukuran maksimal 2MB.',
+                    'mime_in'  => 'Format Slider harus JPG/PNG.'
+                ]
+            ]
+        ];
+
+        if (!$this->validate($rulesFile)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        // AMBIL FILE FOTO (TAPI BELUM DI MOVE)
+        $file = $this->request->getFile('slider');
+        $newName = $file->getRandomName();
+
+        // SIMPAN KE DATABASE (TANPA MOVE FOTO)
+        $data = ['slider' => $newName];
+        if (!$this->ModelSlider->insert($data)) {
+            return redirect()->back()->withInput()
+                ->with('errors', $this->ModelSlider->errors());
+        }
+
+        // --- JIKA DATABASE SUKSES, BARU PINDAHKAN FOTO ---
+        $file->move('uploads/web/', $newName);
+
+        session()->setFlashdata('success', 'Data slider berhasil disimpan.');
+            return redirect()->to('/admin/slider');
+    }
+    public function DeleteSlider($id_slider)
+    {
+        // Ambil data slider berdasarkan id_slider
+        $slider = $this->ModelSlider->find($id_slider);
+        if (!$slider) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data slider tidak ditemukan');
+        }
+
+        // Hapus data dari database
+        $this->ModelSlider->delete($id_slider);
+
+        // Hapus file slider dari folder uploads jika ada
+        if (!empty($slider['slider']) && file_exists('uploads/web/' . $slider['slider'])) {
+            unlink('uploads/web/' . $slider['slider']);
+        }
+
+        session()->setFlashdata('success', 'Data slider berhasil dihapus.');
+        return redirect()->to('/admin/slider');
+    }
+
 }

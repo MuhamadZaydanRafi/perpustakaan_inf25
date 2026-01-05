@@ -88,6 +88,12 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
     $routes->get('pengaturan', 'Pengaturan::web');
     $routes->post('pengaturan/updateweb', 'Pengaturan::UpdateWeb');
 
+    //pengaturan
+    $routes->get('slider', 'Pengaturan::slider');
+    $routes->get('slider/input', 'Pengaturan::InputSlider');
+    $routes->post('slider/insertslider', 'Pengaturan::InsertSlider');
+    $routes->get('slider/delete/(:num)', 'Pengaturan::DeleteSlider/$1');
+
 
 });
 
