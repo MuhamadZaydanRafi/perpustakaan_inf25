@@ -19,7 +19,10 @@ class ModelPengaturan extends Model
         'kab_kota' ,
         'no_telp' ,
         'logo' ,
-        'kode_pos'
+        'kode_pos',
+        'sejarah',
+        'visi',
+        'misi'
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -43,6 +46,9 @@ class ModelPengaturan extends Model
         'kab_kota' => 'required|max_length[100]',
         'no_telp'  => 'required|max_length[15]',
         'kode_pos' => 'required|max_length[10]',
+        'sejarah'  => 'required',
+        'visi'     => 'required',
+        'misi'     => 'required',
     ];
     protected $validationMessages   = [
         'nama_web' => [
@@ -68,6 +74,15 @@ class ModelPengaturan extends Model
         'kode_pos' => [
             'required'    => 'Kode pos wajib diisi.',
             'max_length'  => 'Kode pos maksimal 10 karakter.'
+        ],
+        'sejarah' => [
+            'required'    => 'Sejarah wajib diisi.'
+        ],
+        'visi' => [
+            'required'    => 'Visi wajib diisi.'
+        ],
+        'misi' => [
+            'required'    => 'Misi wajib diisi.'
         ],
     ];
     protected $skipValidation       = false;

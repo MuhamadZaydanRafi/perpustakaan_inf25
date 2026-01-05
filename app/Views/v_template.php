@@ -56,9 +56,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               <li><a href="#" class="dropdown-item">Some action </a></li>
               <li><a href="#" class="dropdown-item">Some other action</a></li>
-
-
-              
+              <!-- End Level two -->
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Profil</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="<?= base_url('visimisi') ?>" class="dropdown-item">Visi Misi </a></li>
+              <li><a href="<?= base_url('sejarah') ?>" class="dropdown-item">Sejarah</a></li>
               <!-- End Level two -->
             </ul>
           </li>
@@ -100,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="navbar-brand">
             <h1 class="m-0"> <b><?= $web['nama_web'] ?></b></h1>
           </div>
-          </div>><!-- /.col -->
+          </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

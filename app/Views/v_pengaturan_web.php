@@ -73,6 +73,37 @@
                   </div>
                 </div>
                 <div class="row">
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Visi</label>
+                    <textarea rows="8" type="text" name="visi" value="<?= $web['visi'] ?? '' ?>" placeholder="Visi" class="form-control <?= isset(session('errors')['visi']) ? 'is-invalid' : '' ?>"><?= $web['visi'] ?? '' ?></textarea>
+                    <div class="invalid-feedback">
+                        <?= session('errors')['visi'] ?? '' ?>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Misi</label>
+                    <textarea rows="8" type="text" name="misi" value="<?= $web['misi'] ?? '' ?>" placeholder="Misi" class="form-control <?= isset(session('errors')['misi']) ? 'is-invalid' : '' ?>"><?= $web['misi'] ?? '' ?></textarea>
+                    <div class="invalid-feedback">
+                        <?= session('errors')['misi'] ?? '' ?>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                    <label>Sejarah</label>
+                    <textarea rows="10" type="text" name="sejarah" value="<?= $web['sejarah'] ?? '' ?>" placeholder="Sejarah" class="form-control <?= isset(session('errors')['sejarah']) ? 'is-invalid' : '' ?>"><?= $web['sejarah'] ?? '' ?></textarea>
+                    <div class="invalid-feedback">
+                        <?= session('errors')['sejarah'] ?? '' ?>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group">
                       <div class="form-group">

@@ -75,6 +75,10 @@ class Pengaturan extends BaseController
             'kecamatan'        => $this->request->getPost('kecamatan'),
             'kab_kota'        => $this->request->getPost('kab_kota'),
             'no_telp'        => $this->request->getPost('no_telp'),
+            'kode_pos'      => $this->request->getPost('kode_pos'),
+            'sejarah'      => $this->request->getPost('sejarah'),
+            'visi'         => $this->request->getPost('visi'),
+            'misi'         => $this->request->getPost('misi'),
         ];
 
         /*
@@ -111,7 +115,7 @@ class Pengaturan extends BaseController
         }
 
         session()->setFlashdata('success', 'Pengaturan berhasil diupdate.');
-        return redirect()->to('/admin/prngaturan');
+        return redirect()->to('/admin/pengaturan');
     }
 
     public function slider()
