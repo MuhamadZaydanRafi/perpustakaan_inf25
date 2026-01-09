@@ -186,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2026 <a href="#">PERPUSTAKAAN <?= $web['nama_web'] ?></a>.</strong> 
+    <strong>Copyright &copy; 2026 <a href="#">PERPUSTAKAAN <?= $web['nama_web'] ?? 'Digital' ?></a>.</strong> 
   </footer>
 </div>
 <!-- ./wrapper -->

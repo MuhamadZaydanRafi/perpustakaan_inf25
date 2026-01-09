@@ -29,7 +29,9 @@ class Anggota extends BaseController
             'judul' => 'Profil Anggota',
             'page'  => 'dashboard_anggota/v_anggota',
             'anggotawithkelas'   => $this->ModelAnggota->getAnggotaWithKelas(),
-            
+            'web' => [
+                'nama_web' => 'Digital'
+            ]
         ];
         return view('v_template_anggota',$data);
     }
