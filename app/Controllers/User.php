@@ -219,7 +219,7 @@ class User extends BaseController
             'judul' => 'Detail User',
             'menu' => 'user',
             'page' => 'user/v_detail',
-            'admins' => $this->ModelUser->find($id_user),
+            'users' => $this->ModelUser->find($id_user),
         ];
         return view('v_template_admin' ,$data);
     }

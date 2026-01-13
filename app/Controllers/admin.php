@@ -18,9 +18,10 @@ class Admin extends BaseController
             'submenu'=> '',
             'judul' => 'Admin',
             'page'  => 'v_admin',
-            // 'buku'  =>  // $this->ModelAdmin->TotalBuku(),
-            'user'  => $this->ModelAdmin->TotalUser(),
-            // 'ebook' =>  // $this->ModelAdmin->TotalEBook(),
+            'total_buku'  =>   $this->ModelAdmin->TotalBuku(),
+            'total_user'  => $this->ModelAdmin->TotalUser(),
+            'total_ebook' =>   $this->ModelAdmin->TotalEBook(),
+            'total_peminjaman_pending' => $this->ModelAdmin->TotalPeminjamanPending(),
         ];
         return view('v_template_Admin',$data);
     }

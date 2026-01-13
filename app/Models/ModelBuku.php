@@ -25,6 +25,9 @@ class ModelBuku extends Model
         'jumlah',
         'cover',
         'bahasa',
+        'sinopsis',
+        'jml_tersedia',
+        'jml_dipinjam',
         
     ];
 
@@ -134,6 +137,18 @@ class ModelBuku extends Model
                     ->join('tbl_penerbit', 'tbl_penerbit.id_penerbit = tbl_buku.id_penerbit')
                     ->where('tbl_buku.id_buku', $id_buku)
                     ->first();
+    }
+
+    public function BukuBaru()
+    {
+        return $this->db->table('tbl_buku')
+                ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_buku.id_kategori')
+                    ->join('tbl_rak', 'tbl_rak.id_rak = tbl_buku.id_rak')
+                    ->join('tbl_penulis', 'tbl_penulis.id_penulis = tbl_buku.id_penulis')
+                    ->join('tbl_penerbit', 'tbl_penerbit.id_penerbit = tbl_buku.id_penerbit')
+                    ->orderBy('tbl_buku.id_buku', 'DESC')
+                    ->limit(10)
+                    ->get()->getResultArray();
     }
 
 }

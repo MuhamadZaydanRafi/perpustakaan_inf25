@@ -109,9 +109,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('admin/buku') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='buku' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Buku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/ebook') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='ebook' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>E-Book</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -157,6 +163,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+
+          <!-- Peminjaman Menu -->
+          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='peminjaman' ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='peminjaman' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-handshake"></i>
+              <p>
+                Peminjaman
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('admin/peminjaman') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='pengajuan' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengajuan Masuk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/peminjaman/diterima') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='diterima' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Diterima</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/peminjaman/ditolak') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='ditolak' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ditolak</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/peminjaman/dikembalikan') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='dikembalikan' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dikembalikan</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <?php if(session()->get('role') === 'admin'): ?>
           <li class="nav-item <?=  (isset($menu) ? $menu : '')=='pengaturan' ? 'menu-open' : '' ?>">
             <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='pengaturan' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-cogs"></i>
@@ -188,6 +233,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          <?php endif; ?>
           
           
         </ul>

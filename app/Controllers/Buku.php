@@ -89,6 +89,7 @@ class Buku extends BaseController
             'halaman' => $this->request->getPost('halaman'),
             'jumlah' => $this->request->getPost('jumlah'),
             'bahasa' => $this->request->getPost('bahasa'),
+            'sinopsis' => $this->request->getPost('sinopsis'),
             'cover'         => $newName
         ];
 
@@ -157,7 +158,10 @@ class Buku extends BaseController
             'isbn' => $this->request->getPost('isbn'),
             'halaman' => $this->request->getPost('halaman'),
             'jumlah' => $this->request->getPost('jumlah'),
+            'jml_tersedia' => $this->request->getPost('jumlah'),
+            'jml_dipinjam' => '0',
             'bahasa' => $this->request->getPost('bahasa'),
+            'sinopsis' => $this->request->getPost('sinopsis'),
         ];
 
         // Ambil file cover
@@ -243,6 +247,24 @@ class Buku extends BaseController
         return redirect()->to('/admin/buku');
     }
     
+
+    public function detail($id_buku)
+    {
+        $buku = $this->ModelBuku->getDetailBuku($id_buku);
+        if (!$buku) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data buku tidak ditemukan');
+        }
+
+        $data = [
+            'menu' => 'masterdata',
+            'submenu' => 'buku',
+            'judul' => 'Detail Buku',
+            'page' => 'buku/v_detail',
+            'buku' => $buku,
+        ];
+
+        return view('v_template_Admin', $data);
+    }
 
     public function DeleteData($id_buku)
     {

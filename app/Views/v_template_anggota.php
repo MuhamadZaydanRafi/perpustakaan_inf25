@@ -12,6 +12,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('AdminLTE') ?>/dist/css/adminlte.min.css">
 </head>
@@ -90,43 +96,61 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='masterdata' ? 'menu-open' : '' ?>">
-            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='masterdata' ? 'active' : '' ?>">
+          
+          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='koleksi' ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='koleksi' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Master Buku
+                Koleksi
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('anggota/buku') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='buku' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Buku</p>
+                  <p>Daftar Buku</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/kategori') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='kategori' ? 'active' : '' ?>">
+                <a href="<?= base_url('anggota/ebook') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='ebook' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori</p>
+                  <p>Daftar E-Book</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item <?=  (isset($menu) ? $menu : '')=='peminjaman' ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=  (isset($menu) ? $menu : '')=='peminjaman' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-swatchbook"></i>
+              <p>
+                Peminjaman
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('anggota/peminjaman/pengajuan') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='pengajuan' ? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengajuan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/rak') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='rak' ? 'active' : '' ?>">
+                <a href="<?= base_url('anggota/peminjaman/diterima') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='diterima' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Rak</p>
+                  <p>Diterima</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/penerbit') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penerbit' ? 'active' : '' ?>">
+                <a href="<?= base_url('anggota/peminjaman/ditolak') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='ditolak' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Penerbit</p>
+                  <p>Ditolak</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('admin/penulis') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='penulis' ? 'active' : '' ?>">
+                <a href="<?= base_url('anggota/peminjaman/history') ?>" class="nav-link <?=  (isset($submenu) ? $submenu : '')=='history' ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Penulis</p>
+                  <p>History</p>
                 </a>
               </li>
             </ul>
@@ -197,7 +221,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="<?= base_url('AdminLTE') ?>/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('AdminLTE') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Select2 -->
+<script src="<?= base_url('AdminLTE') ?>/plugins/select2/js/select2.full.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="<?= base_url('AdminLTE') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('AdminLTE') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('AdminLTE') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('AdminLTE') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('AdminLTE') ?>/dist/js/adminlte.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(document).ready(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements with Bootstrap4 theme
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+});
+</script>
 </body>
 </html>
