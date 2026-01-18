@@ -134,6 +134,12 @@ $routes->group('admin', ['filter' => 'filteruser'], function ($routes) {
         $routes->get('delete/(:num)', 'Pengaturan::DeleteSlider/$1');
     });
 
+    //feedback
+    $routes->get('feedback', 'Feedback::index');
+    $routes->get('feedback/input', 'Feedback::input');
+    $routes->post('feedback/insertdata', 'Feedback::InsertData');
+    $routes->get('feedback/delete/(:num)', 'Feedback::delete/$1');
+
 });
 
 $routes->group('anggota', ['filter' => 'filteranggota'], function ($routes) {
