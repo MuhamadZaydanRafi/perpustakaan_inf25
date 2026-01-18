@@ -41,6 +41,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
+        <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc9O47933UzkCfsCQtOno5RwCeVosyVsaZzC-jF4-5OM7I_1w/viewform">
+          <i class="fas fa-comments"></i> Feedback
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?= base_url('log_out_admin') ?>">
           <i class="fas fa-sign-out-alt"></i> LogOut
         </a>
@@ -224,6 +229,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               </li> 
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/user') ?>" class="nav-link <?=  (isset($menu) ? $menu : '')=='user' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="<?= base_url('admin/user') ?>" class="nav-link <?=  (isset($menu) ? $menu : '')=='user' ? 'active' : '' ?>">
